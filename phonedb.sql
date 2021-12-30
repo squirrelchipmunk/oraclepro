@@ -1,3 +1,9 @@
+-- 계정 생성
+create user phonedb identified by phonedb;
+-- 권한 부여
+grant resource, connect to phonedb;
+
+
 -- 테이블 삭제
 drop table person;
 
@@ -7,7 +13,7 @@ drop SEQUENCE seq_person_id;
 -- 테이블 생성
 create table person(
     person_id number(5),
-    name varchar2(20) not null,
+    name varchar2(30) not null,
     hp varchar2(20),
     company varchar2(20),
     

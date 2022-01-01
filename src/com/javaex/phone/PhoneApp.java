@@ -1,6 +1,5 @@
 package com.javaex.phone;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,7 +8,7 @@ public class PhoneApp {
 	private static Scanner sc = new Scanner(System.in);
 	private static PhoneDao pDao = new PhoneDao();
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		
 		showTitle();
 		
@@ -52,10 +51,6 @@ public class PhoneApp {
 		sc.close();
 		
 	}
-	
-
-
-
 
 	// view
 	private static void showTitle() {
@@ -93,6 +88,7 @@ public class PhoneApp {
 	}
 	
 	
+	
 	// manage
 	private static void insertPerson() {
 		System.out.println("<2.등록>");
@@ -105,7 +101,6 @@ public class PhoneApp {
 		
 		PersonVo insertVo = new PersonVo(name, phone, company);
 		pDao.personInsert(insertVo);
-		
 	}
 	
 	private static void updatePerson() {
@@ -122,7 +117,6 @@ public class PhoneApp {
 		
 		PersonVo updateVo = new PersonVo(personId, name, phone, company);
 		pDao.personUpdate(updateVo);
-		
 	}
 	
 	private static void deletePerson() {
